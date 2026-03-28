@@ -10,15 +10,7 @@ def calculator(expression):
 
 #  Tool 2: Knowledge (General Questions)
 def knowledge(query):
-    """Use this tool to answer general knowledge questions."""
-    
-    # Simple demo logic (you can expand later)
-    if "capital of india" in query.lower():
-        return "The capital of India is New Delhi."
-    elif "ai agents" in query.lower():
-        return "AI agents are systems that can think and act."
-    else:
-        return "I don't have information on that."
+    return llm.predict(query)
 
 
 # 🔧 Tool List
@@ -41,7 +33,7 @@ llm = ChatOpenAI(
     temperature=0
 )
 
-# 🤖 Agent
+#  Agent
 agent = initialize_agent(
     tools,
     llm,
